@@ -19,6 +19,8 @@ import json
 import sys
 import argparse
 import time
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 # Check to make sure the user has version 2.x of python, if not, exit.
 current_maj_version = sys.version_info.major
@@ -50,8 +52,8 @@ if not len(sys.argv) > 1:
 url = 'https://localhost:8834'
 verify = False
 token = ''
-username = 'xxxxx'
-password = 'xxxxx'
+username = 'admin'
+password = 'admin'
 
 class create_menu:
     '''This is used to build an instance of the menu object
